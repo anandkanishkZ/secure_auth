@@ -27,7 +27,8 @@ module.exports = {
   tls: {
     keyPath: path.resolve(root, process.env.TLS_KEY_PATH || 'certs/server.key'),
     certPath: path.resolve(root, process.env.TLS_CERT_PATH || 'certs/server.crt'),
-    caPath: path.resolve(root, process.env.TLS_CA_PATH || 'certs/ca.crt'),
+    // Set TLS_CA_PATH= (empty) when TLS_CERT_PATH already contains the full chain (e.g. Let's Encrypt fullchain.pem)
+    caPath: process.env.TLS_CA_PATH === '' ? null : path.resolve(root, process.env.TLS_CA_PATH || 'certs/ca.crt'),
     keylogFile: process.env.TLS_KEYLOG_FILE ? path.resolve(root, process.env.TLS_KEYLOG_FILE) : null,
   },
 

@@ -74,7 +74,7 @@ const tlsOptions = {
   key: fs.readFileSync(config.tls.keyPath),
   cert: fs.readFileSync(config.tls.certPath),
   // Send the CA with the leaf so clients can build the full chain
-  ca: fs.existsSync(config.tls.caPath) ? fs.readFileSync(config.tls.caPath) : undefined,
+  ca: config.tls.caPath && fs.existsSync(config.tls.caPath) ? fs.readFileSync(config.tls.caPath) : undefined,
   minVersion: 'TLSv1.2', // SSLv3, TLS 1.0 and TLS 1.1 are refused
   maxVersion: 'TLSv1.3',
   // TLS 1.2 suites: forward-secret ECDHE key exchange + AEAD ciphers only
