@@ -1,0 +1,8 @@
+node_modules/
+.env
+certs/*.key
+certs/*.crt
+certs/*.pem
+*.keylog
+sslkeys.log
+report/capture/*.log

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Secure Auth</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Log in</h1>
+    <p class="muted">Credentials are sent only over HTTPS and verified against the bcrypt hash.</p>
+
+    <form id="login-form" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="username" required maxlength="254"
+             placeholder="you@example.com">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+      <button type="submit">Log in</button>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="switch">No account yet? <a href="/signup">Sign up</a></p>
+  </main>
+
+  <footer id="tls-info" class="tls-info">Checking connection…</footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

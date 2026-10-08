@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up · Secure Auth</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Create account</h1>
+    <p class="muted">Your email is stored AES-256 encrypted and your password is bcrypt-hashed.</p>
+
+    <form id="signup-form" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="254"
+             placeholder="you@example.com">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="new-password" required
+             minlength="8" maxlength="72">
+      <p class="hint">8+ characters with uppercase, lowercase, a number and a symbol.</p>
+
+      <label for="confirmPassword">Confirm password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required>
+
+      <button type="submit">Sign up</button>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="switch">Already registered? <a href="/login">Log in</a></p>
+  </main>
+
+  <footer id="tls-info" class="tls-info">Checking connection…</footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/signup.js"></script>
+</body>
+</html>

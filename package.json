@@ -1,0 +1,38 @@
+{
+  "name": "secure-auth-https",
+  "version": "1.0.0",
+  "description": "Express + MongoDB authentication demo: HTTPS/TLS for data in motion, AES-256-GCM for data at rest, bcrypt password hashing",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/generate-keys.js && node scripts/generate-certs.js",
+    "keys": "node scripts/generate-keys.js",
+    "certs": "node scripts/generate-certs.js",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "show-db": "node scripts/show-db.js",
+    "screenshots": "node scripts/take-screenshots.js",
+    "report": "node scripts/build-report.js",
+    "capture": "node scripts/capture-poc.js",
+    "api-tests": "node scripts/api-tests.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.0",
+    "validator": "^13.15.0"
+  },
+  "devDependencies": {
+    "@peculiar/x509": "^2.1.0",
+    "puppeteer-core": "^25.12.0",
+    "reflect-metadata": "^0.2.2"
+  }
+}

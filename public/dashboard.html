@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Secure Auth</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="card wide">
+    <h1>Welcome</h1>
+    <p class="muted">You are authenticated. Session cookie: <code>__Host-session</code> (Secure, HttpOnly, SameSite=Strict).</p>
+
+    <dl id="profile" class="profile">
+      <dt>Email (decrypted on the server)</dt><dd id="email">…</dd>
+      <dt>Email as stored in MongoDB (AES-256-GCM)</dt><dd><pre id="stored-email">…</pre></dd>
+      <dt>Password storage</dt><dd id="password-storage">…</dd>
+      <dt>Account created</dt><dd id="created">…</dd>
+      <dt>Last login</dt><dd id="last-login">…</dd>
+    </dl>
+
+    <button id="logout" type="button" class="secondary">Log out</button>
+  </main>
+
+  <footer id="tls-info" class="tls-info">Checking connection…</footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
